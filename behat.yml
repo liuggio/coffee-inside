@@ -1,0 +1,8 @@
+default:
+  suites:
+    domain:
+      contexts: [ Coffee\Tests\Examples\CoffeeDomainContext ]
+    application:
+      contexts: [ Coffee\Tests\Examples\CoffeeApplicationContext ]
+#    presentation:
+#      contexts: [ CoffeePresentationContext ]
