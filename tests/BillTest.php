@@ -19,5 +19,20 @@ class BillTest extends \PHPUnit_Framework_TestCase
         $bill = Bill::emit($order);
         $this->assertInstanceOf('Coffee\Bill', $bill);
     }
+
+    /**
+     * @test
+     */
+    public function the_total_should_be_equal_to_10()
+    {
+        $money =  Money::EUR(10);
+        $product = Product::namedAndPriced('name', $money);
+        $order = Order::create($product);
+
+
+        $bill = Bill::emit($order);
+
+        $this->assertEquals($money, $bill->getTotal());
+    }
 }
  
